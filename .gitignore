@@ -1,0 +1,7 @@
+_opam
+*.cmi
+*.cmx
+*.a
+*.o
+xcuserdata/
+prog
