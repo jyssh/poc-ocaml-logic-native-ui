@@ -24,5 +24,5 @@ var str_c = UnsafeMutablePointer<CChar>(mutating: str.utf8String)
 //var _str = "Jayesh"
 //var _str_c = UnsafeMutablePointer<CChar>(mutating: _str.cString(using: .utf8))
 
-print(String.init(cString: ModKit.say_hello(str_c)) ?? "")
+print(String.init(cString: ModKit.say_hello(str_c)))
 
