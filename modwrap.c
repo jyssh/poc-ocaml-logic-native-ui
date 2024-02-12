@@ -15,17 +15,6 @@ int fib(int n)
   return Int_val(caml_callback(*fib_closure, Val_int(n)));
 }
 
-char * format_result(int n)
-{
-  static const value * format_result_closure = NULL;
-  if (format_result_closure == NULL) {
-    format_result_closure = caml_named_value("format_result");
-  }
-  return strdup(String_val(caml_callback(*format_result_closure, Val_int(n))));
-  /* We copy the C string returned by String_val to the C heap
-     so that it remains valid after garbage collection. */
-}
-
 char * say_hello(char * s)
 {
   static const value * closure = NULL;
@@ -37,3 +26,14 @@ char * say_hello(char * s)
   /* We copy the C string returned by String_val to the C heap
      so that it remains valid after garbage collection. */
 }
+
+/*
+char * message(char * msg)
+{
+  static const value * closure = NULL;
+  if (closure == NULL) {
+    closure = caml_named_value("message");
+  }
+  return strdup(Bytes_val(caml_callback(*closure, msg)));
+}
+*/

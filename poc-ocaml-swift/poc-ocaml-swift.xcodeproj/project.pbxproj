@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291FE62A2B7A449000E00FD9 /* ModKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291FE6292B7A449000E00FD9 /* ModKit.xcframework */; };
 		2968308B2B6F6C21000BC052 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968308A2B6F6C21000BC052 /* main.swift */; };
-		29AFE7912B6FDFC8000FCEAF /* ModKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AFE7902B6FDFC8000FCEAF /* ModKit.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		291FE6292B7A449000E00FD9 /* ModKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ModKit.xcframework; path = ../../macos/ModKit.xcframework; sourceTree = "<group>"; };
 		296830872B6F6C21000BC052 /* poc-ocaml-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "poc-ocaml-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2968308A2B6F6C21000BC052 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		29AFE7902B6FDFC8000FCEAF /* ModKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ModKit.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29AFE7912B6FDFC8000FCEAF /* ModKit.xcframework in Frameworks */,
+				291FE62A2B7A449000E00FD9 /* ModKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +69,7 @@
 		296830912B6F6C3F000BC052 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				29AFE7902B6FDFC8000FCEAF /* ModKit.xcframework */,
+				291FE6292B7A449000E00FD9 /* ModKit.xcframework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
