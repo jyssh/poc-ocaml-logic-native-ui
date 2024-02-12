@@ -4,10 +4,12 @@ ld: warning: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platfor
 $ ocamlopt -c modwrap.c    
 
 $ cp `ocamlopt -where`/libasmrun.a mod.a && chmod +w mod.a
+fish> cp (ocamlopt -where)/libasmrun.a mod.a && chmod +w mod.a
 
 $ ar r mod.a modcaml.o modwrap.o        
 
 $ cc -o prog -I `ocamlc -where` main.c mod.a -lcurses        
+fish> cc -o prog -I (ocamlc -where) main.c mod.a -lcurses        
 
 $ rm -rf macos/ModKit.xcframework 
 
