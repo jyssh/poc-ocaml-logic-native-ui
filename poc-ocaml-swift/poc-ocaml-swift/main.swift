@@ -10,19 +10,37 @@ import ModKit
 
 ModKit.caml_startup(CommandLine.unsafeArgv)
 
+// ----------
+
 var n : Int32 = 8
 print(ModKit.fib(n))
 
+// ----------
+
 // src: https://forums.swift.org/t/how-to-pass-swift-string-to-c-function-in-swift-5/28416/2
 // Also explains how to pass char ** var in the same thread.
+var name: NSString = "Jayesh"
+var name_c = UnsafeMutablePointer<CChar>(mutating: name.utf8String)
+print(String.init(cString: ModKit.say_hello(name_c)))
 
-var str: NSString = "Jayesh"
-var str_c = UnsafeMutablePointer<CChar>(mutating: str.utf8String)
-//var str_c_opt = UnsafeMutablePointer<CChar>?(str_c)
+// ----------
 
-// Alternative approach from the above thread, that does not need Obj-C's NSString, but is deemed to be unsafe
-//var _str = "Jayesh"
-//var _str_c = UnsafeMutablePointer<CChar>(mutating: _str.cString(using: .utf8))
+var msgType: NSString = "greet"
+var msgType_c = UnsafeMutablePointer<CChar>(mutating: msgType.utf8String)
 
-print(String.init(cString: ModKit.say_hello(str_c)))
+var person = Person()
+person.id = 1
+person.name = "Jayesh Bhoot"
+person.email = "fake@mail.com"
+person.phone = ["123456668"]
 
+// swift-protobuf github readme says serializedBytes() but it seems outdated. There is no serializedBytes().
+let binaryData: Data = try person.serializedData()
+// convert Data to an array of bytes [UInt8]
+let binaryDataAsBytes = [UInt8](binaryData)
+
+let data_pointer = UnsafeMutablePointer<UInt8>.allocate(capacity: binaryDataAsBytes.count)
+data_pointer.update(from: binaryDataAsBytes, count: binaryDataAsBytes.count)
+print(String.init(cString: ModKit.message(msgType_c, data_pointer, Int32(binaryDataAsBytes.count))))
+
+// ----------

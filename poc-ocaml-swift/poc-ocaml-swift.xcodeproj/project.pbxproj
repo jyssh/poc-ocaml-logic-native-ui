@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		291FE62A2B7A449000E00FD9 /* ModKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291FE6292B7A449000E00FD9 /* ModKit.xcframework */; };
+		291FE62C2B7A64A000E00FD9 /* messages.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FE62B2B7A64A000E00FD9 /* messages.pb.swift */; };
+		291FE62F2B7A64E300E00FD9 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 291FE62E2B7A64E300E00FD9 /* SwiftProtobuf */; };
+		291FE6312B7A64E300E00FD9 /* SwiftProtobufPluginLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 291FE6302B7A64E300E00FD9 /* SwiftProtobufPluginLibrary */; };
+		291FE6332B7A64E300E00FD9 /* protoc-gen-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 291FE6322B7A64E300E00FD9 /* protoc-gen-swift */; };
 		2968308B2B6F6C21000BC052 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968308A2B6F6C21000BC052 /* main.swift */; };
+		29C0E1C32B7CED6A00ABE11F /* ModKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C0E1C22B7CED6A00ABE11F /* ModKit.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +28,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		291FE6292B7A449000E00FD9 /* ModKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ModKit.xcframework; path = ../../macos/ModKit.xcframework; sourceTree = "<group>"; };
+		291FE62B2B7A64A000E00FD9 /* messages.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messages.pb.swift; sourceTree = "<group>"; };
 		296830872B6F6C21000BC052 /* poc-ocaml-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "poc-ocaml-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2968308A2B6F6C21000BC052 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		29C0E1C22B7CED6A00ABE11F /* ModKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ModKit.xcframework; path = ../../macos/ModKit.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +39,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				291FE62A2B7A449000E00FD9 /* ModKit.xcframework in Frameworks */,
+				291FE6332B7A64E300E00FD9 /* protoc-gen-swift in Frameworks */,
+				29C0E1C32B7CED6A00ABE11F /* ModKit.xcframework in Frameworks */,
+				291FE6312B7A64E300E00FD9 /* SwiftProtobufPluginLibrary in Frameworks */,
+				291FE62F2B7A64E300E00FD9 /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				2968308A2B6F6C21000BC052 /* main.swift */,
+				291FE62B2B7A64A000E00FD9 /* messages.pb.swift */,
 			);
 			path = "poc-ocaml-swift";
 			sourceTree = "<group>";
@@ -69,7 +78,7 @@
 		296830912B6F6C3F000BC052 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				291FE6292B7A449000E00FD9 /* ModKit.xcframework */,
+				29C0E1C22B7CED6A00ABE11F /* ModKit.xcframework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -90,6 +99,11 @@
 			dependencies = (
 			);
 			name = "poc-ocaml-swift";
+			packageProductDependencies = (
+				291FE62E2B7A64E300E00FD9 /* SwiftProtobuf */,
+				291FE6302B7A64E300E00FD9 /* SwiftProtobufPluginLibrary */,
+				291FE6322B7A64E300E00FD9 /* protoc-gen-swift */,
+			);
 			productName = "poc-ocaml-swift";
 			productReference = 296830872B6F6C21000BC052 /* poc-ocaml-swift */;
 			productType = "com.apple.product-type.tool";
@@ -118,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 2968307E2B6F6C21000BC052;
+			packageReferences = (
+				291FE62D2B7A64E300E00FD9 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+			);
 			productRefGroup = 296830882B6F6C21000BC052 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				291FE62C2B7A64A000E00FD9 /* messages.pb.swift in Sources */,
 				2968308B2B6F6C21000BC052 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +315,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		291FE62D2B7A64E300E00FD9 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.25.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		291FE62E2B7A64E300E00FD9 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 291FE62D2B7A64E300E00FD9 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+		291FE6302B7A64E300E00FD9 /* SwiftProtobufPluginLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 291FE62D2B7A64E300E00FD9 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobufPluginLibrary;
+		};
+		291FE6322B7A64E300E00FD9 /* protoc-gen-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 291FE62D2B7A64E300E00FD9 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = "protoc-gen-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2968307F2B6F6C21000BC052 /* Project object */;
 }
