@@ -14,6 +14,11 @@ let message typ data =
   | "greet" -> handle_greet data
   | _ -> "Invalid message"
 
+let message typ data =
+    match typ with
+    | "greet" -> handle_greet data
+    | _ -> "Invalid message"  
+
 (* Export functions to C *)
 
 let _ = Callback.register "fib" fib

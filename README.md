@@ -1,3 +1,15 @@
+## TODO
+
+- accept and return struct Message { data; length; }
+- replace C code with ctypes inverted to produce c stubs
+- explore self-describing or oneof protobuf message to alleviate the need for identifier strings
+  - https://stackoverflow.com/questions/26048832/best-practice-for-determining-the-type-of-a-protocol-buffers-message
+- ability to call Swift function from C so that OCaml can call a Swift fn
+- explore need for async responses from OCaml
+
+## Process
+
+```
 # Install ocamlfind and ocaml-protoc in local opam switch
 $ opam install ocamlfind ocaml-protoc
 
@@ -25,4 +37,4 @@ $ xcodebuild -create-xcframework -library mod.a -headers include -output macos/M
 
 # Generate .pb.swift in current folder
 $ protoc --swift_out=. my.proto
-
+```

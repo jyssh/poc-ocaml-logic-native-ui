@@ -44,3 +44,11 @@ data_pointer.update(from: binaryDataAsBytes, count: binaryDataAsBytes.count)
 print(String.init(cString: ModKit.message(msgType_c, data_pointer, Int32(binaryDataAsBytes.count))))
 
 // ----------
+
+var msg_struct = Message()
+msg_struct.type = msgType_c
+msg_struct.data = data_pointer
+msg_struct.length = UInt32(binaryDataAsBytes.count)
+let msg_struct_ptr = UnsafeMutablePointer<Message>.allocate(capacity: 1)
+msg_struct_ptr.update(from: &msg_struct, count: 1)
+print(String.init(cString: ModKit.message2(msg_struct_ptr)))
